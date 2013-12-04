@@ -19,7 +19,23 @@ describe PigLatin, "#split" do
     it "should turn the phrase into an array of letters" do
         expect(PigLatin.new.split("ari")).to eq(["a", "r", "i"])
     end
-end    
+end  
+
+describe PigLatin, "#add_way" do
+    it "should add way to the end of a word" do
+        expect(PigLatin.new.add_way("egg")).to eq("eggway")
+    end
+end 
+
+describe PigLatin, "#play_game" do
+    it "should have a word that starts with a consonant do the consonant method" do
+        expect(PigLatin.new.play_game("pig")).to eq("igpay")
+    end
+
+    it "should have a word that starts with a vowel add way" do
+        expect(PigLatin.new.play_game("egg")).to eq("eggway")
+    end
+ end
 
 # # For words that begin with consonant sounds, t
 # "duck" → "uckday"
